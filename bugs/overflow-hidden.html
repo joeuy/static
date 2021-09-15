@@ -2,11 +2,16 @@
 <html>
 
 <head>
-    <title>Position fixed </title>
+    <title>Overflow hidden sample</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="initial-scale=1, viewport-fit=cover" />
 
     <style>
+        html,
+        body {
+            overflow: hidden;
+        }
+
         body {
             font-family: sans-serif;
             margin: 0;
@@ -17,59 +22,27 @@
             height: 30vh;
             padding: 10;
         }
-
-        .modal {
-            font-size: 30px;
-            color: green;
-            background: rgba(255, 0, 0, 0.6);
-            box-sizing: border-box;
-            border: 5px solid green;
-
-            display: none;
-            position: fixed;
-            z-index: 100;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-        }
-
-        .modal.open {
-            display: block;
-        }
     </style>
 </head>
 
 <body>
-    <div class="content">Loren ipsum</div>
-    <div class="content">Loren ipsum</div>
-    <div class="content">Loren ipsum</div>
-    <div class="content">Loren ipsum</div>
-    <div class="content">Loren ipsum</div>
-    <div class="content">Loren ipsum</div>
-    <div class="content">Loren ipsum</div>
-    <div class="content">Loren ipsum</div>
-    <div class="content">Loren ipsum</div>
-
-    <div class="modal">
-        Modal content
-    </div>
-
-    <script>
-        const modal = document.querySelector(".modal");
-        document.body.addEventListener("click", () => {
-
-            if (modal.classList.contains('open')) {
-                document.body.style.overflow = '';
-                document.body.style.position = '';
-                modal.classList.remove('open');
-            } else {
-                document.body.style.overflow = "hidden";
-                document.body.style.position = "fixed";
-                modal.classList.add("open");
+    <div class="content">
+        iOS 14 and iOS 15 Safari, page will scroll even after applying:
+        <code>
+            html,
+            body {
+                overflow: hidden;
             }
-        });
-    </script>
+        </code>
+    </div>
+    <div class="content">Loren ipsum</div>
+    <div class="content">Loren ipsum</div>
+    <div class="content">Loren ipsum</div>
+    <div class="content">Loren ipsum</div>
+    <div class="content">Loren ipsum</div>
+    <div class="content">Loren ipsum</div>
+    <div class="content">Loren ipsum</div>
+    <div class="content">Loren ipsum</div>
 </body>
 
 </html>
